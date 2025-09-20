@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from '../Components/Navbar'
-import HeroSection from '../Components/heroSection'
+import HeroSection from '../Components/HeroSection'
 import Cards from '../Components/Cards'
 import Footer from '../Components/Footer'
 
