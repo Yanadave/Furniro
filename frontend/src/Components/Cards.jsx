@@ -313,7 +313,7 @@ const Cards = () => {
             {/* Image */}
             <div className="w-full aspect-[4/3] overflow-hidden">
               <img
-                src={`http://localhost:40001${product.imageUrl}`}
+                src={`https://furniro-ga3w.onrender.com${product.imageUrl}`}
                 alt={product.name}
                 className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
               />
