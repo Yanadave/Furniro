@@ -1,0 +1,1 @@
+export const BACKEND_URL = "http://localhost:40001/api/v1";
