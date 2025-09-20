@@ -359,6 +359,72 @@ const Cards = () => {
           )}
         </div>
       )}
+
+      {/* Create Product Popup */}
+            {showCreatePopup && (
+                <div className="fixed inset-0 backdrop-brightness-25 bg-opacity-50 flex items-center justify-center z-50">
+                    <div className="bg-white p-6 w-96 rounded shadow-lg">
+                        <h2 className="text-xl font-bold mb-4">Add Product</h2>
+                        {["name", "description", "brand", "category", "price", "originalPrice"].map((field) => (
+                            <input
+                                key={field}
+                                type={field.includes("Price") ? "number" : "text"}
+                                name={field}
+                                value={formData[field]}
+                                onChange={handleChange}
+                                placeholder={field}
+                                className="w-full mb-2 p-2 border rounded"
+                            />
+                        ))}
+                        <div className="flex items-center gap-2 mb-2">
+                            <input
+                                type="checkbox"
+                                name="isNewProduct"
+                                checked={formData.isNewProduct}
+                                onChange={handleChange}
+                            />
+                            <label>Is New Product</label>
+                        </div>
+                        <div className="flex justify-end gap-2">
+                            <button className="px-4 py-2 bg-gray-300 hover:bg-gray-400 rounded cursor-pointer" onClick={() => setShowCreatePopup(false)}>Cancel</button>
+                            <button className="px-4 py-2 bg-[#e88411]  hover:bg-[#f79c33] text-white rounded cursor-pointer" onClick={handleCreate}>Add</button>
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            {/* Update Product Popup */}
+            {showUpdatePopup && (
+                <div className="fixed inset-0 backdrop-brightness-25 bg-opacity-50 flex items-center justify-center z-50">
+                    <div className="bg-white p-6 w-96 rounded shadow-lg">
+                        <h2 className="text-xl font-bold mb-4">Update Product</h2>
+                        {["name", "description", "brand", "category", "price", "originalPrice"].map((field) => (
+                            <input
+                                key={field}
+                                type={field.includes("Price") ? "number" : "text"}
+                                name={field}
+                                value={formData[field]}
+                                onChange={handleChange}
+                                placeholder={field}
+                                className="w-full mb-2 p-2 border rounded"
+                            />
+                        ))}
+                        <div className="flex items-center gap-2 mb-2">
+                            <input
+                                type="checkbox"
+                                name="isNewProduct"
+                                checked={formData.isNewProduct}
+                                onChange={handleChange}
+                            />
+                            <label>Is New Product</label>
+                        </div>
+                        <div className="flex justify-end gap-2">
+                            <button className="px-4 py-2 bg-gray-300 hover:bg-gray-400 rounded cursor-pointer" onClick={() => setShowUpdatePopup(false)}>Cancel</button>
+                            <button className="px-4 py-2 bg-[#e88411] hover:bg-[#f79c33] text-white rounded cursor-pointer" onClick={handleUpdate}>Update</button>
+                        </div>
+                    </div>
+                </div>
+            )}
     </div>
   );
 };
